@@ -1,31 +1,20 @@
 <template>
   <div>
-<!--    <v-select :options="params.section"></v-select>-->
+    <Section />
+    <Sort />
+    <Window v-show="$store.getters.params.activeSection === 'top'" />
+    <ShowViral v-show="$store.getters.params.activeSection === 'user'" />
   </div>
 </template>
 
 <script>
-
+  import Section from "./selectors/Section";
+  import Sort from "./selectors/Sort";
+  import Window from "./selectors/Window";
+  import ShowViral from "./selectors/ShowViral";
   export default {
     name: "AppHeader",
-    data() {
-      return {
-        params: {
-          section: ['hot', 'top', 'user'],
-          sort: ['viral', 'top', 'time', 'rising'],
-          window: ['day', 'week', 'month', 'year', 'all']
-        }
-      }
-    },
-    methods: {
-      setNewParams() {
-        const sectionVAl = {
-          section: this.$refs.section.value
-        }
-        this.$store.dispatch('setParams', sectionVAl);
-        console.log(this.$store.state.urlParams.section)
-      }
-    }
+    components: {Window, Sort, Section, ShowViral},
   };
 </script>
 

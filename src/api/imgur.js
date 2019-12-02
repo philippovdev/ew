@@ -6,14 +6,14 @@ const ROOT_URL = "https://api.imgur.com/3/gallery";
 
 export default {
   fetchImages() {
-    const urlParams = store.getters.params;
-    const section = urlParams.section;
-    const sort = urlParams.sort;
-    const page = urlParams.page;
-    const window = urlParams.window;
-    const showViral = urlParams.showViral;
+    const params = store.getters.params;
+    const section = params.activeSection;
+    const sort = params.activeSort;
+    const page = params.page;
+    const window = params.activeWindow;
+    const showViral = params.showViral;
 
-    return axios.get(`${ROOT_URL}/${section}/${sort}/${window ? window + '/' : null}${page}/${showViral ? '?showViral=' + showViral : null}`,
+    return axios.get(`${ROOT_URL}/${section || 'hot'}/${sort || 'viral'}/${window ? window + '/' : null}${page}/${section === 'user' ? '?showViral=' + showViral : ''}`,
       {
         headers: {
           Authorization: `Client-ID ${CLIENT_ID}`

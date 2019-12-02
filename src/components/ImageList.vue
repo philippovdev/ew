@@ -17,7 +17,8 @@
       </div>
       <div
         v-else-if="!card.images && card.mp4"
-        class="card__media">
+        class="card__media"
+      >
         <video
           draggable="false"
           playsinline
@@ -57,7 +58,9 @@
           >
         </video>
       </div>
-      <div class="card__description">{{ card.description ? card.description : card.title }}</div>
+      <div class="card__description">
+        {{ card.description ? card.description : card.title }}
+      </div>
     </div>
   </div>
 </template>
