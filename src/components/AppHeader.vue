@@ -2,8 +2,8 @@
   <div>
     <Section />
     <Sort />
-    <Window v-show="$store.getters.params.activeSection === 'top'" />
-    <ShowViral v-show="$store.getters.params.activeSection === 'user'" />
+    <Window v-if="isSectionTop" />
+    <ShowViral v-if="isSectionUser" />
   </div>
 </template>
 
@@ -15,11 +15,16 @@
   export default {
     name: "AppHeader",
     components: {Window, Sort, Section, ShowViral},
+    computed: {
+      isSectionTop() {
+        return this.$store.getters.params.activeSection === 'top'
+      },
+      isSectionUser() {
+        return this.$store.getters.params.activeSection === 'user'
+      }
+    }
   };
 </script>
 
 <style lang="scss">
-  .horizontal {
-    display: flex;
-  }
 </style>

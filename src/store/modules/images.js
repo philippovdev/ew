@@ -42,29 +42,25 @@ const actions = {
     const response = await api.fetchImages();
     commit('setImages', response.data.data);
   },
-  async  setActiveSection({commit}, section) {
+  async setActiveSection({commit}, section) {
     commit('setActiveSection', section);
     const response = await api.fetchImages();
     commit('setImages', response.data.data);
-    console.log(response.data.data);
   },
-  async  setActiveSort({commit}, section) {
+  async setActiveSort({commit}, section) {
     commit('setActiveSort', section);
     const response = await api.fetchImages();
     commit('setImages', response.data.data);
-    console.log(response.data.data);
   },
-  async  setActiveWindow({commit}, section) {
+  async setActiveWindow({commit}, section) {
     commit('setActiveWindow', section);
     const response = await api.fetchImages();
     commit('setImages', response.data.data);
-    console.log(response.data.data);
   },
   async setViral({commit}) {
     commit('setViral');
     const response = await api.fetchImages();
     commit('setImages', response.data.data);
-    console.log(response.data.data);
   }
 
 };
