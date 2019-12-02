@@ -1,0 +1,19 @@
+<template>
+  <div>
+    <AppHeader/>
+    <router-view/>
+  </div>
+</template>
+<script>
+  import AppHeader from "@/components/AppHeader";
+
+  export default {
+    name: "App",
+    components: {
+      AppHeader
+    }
+  };
+</script>
+<styles lang="scss">
+  @import "@/styles/main.scss"
+</styles>
