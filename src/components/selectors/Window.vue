@@ -11,23 +11,17 @@
 </template>
 
 <script>
-  export default {
-    name: "Window",
-    computed: {
-      store() {
-        return this.$store.state
-      }
-    },
-    methods: {
-      setActiveWindow(val) {
-        this.$store.dispatch('setActiveWindow', val)
-      }
+export default {
+  name: "Window",
+  computed: {
+    store() {
+      return this.$store.state;
+    }
+  },
+  methods: {
+    setActiveWindow(val) {
+      this.$store.dispatch("setActiveWindow", val);
     }
   }
+};
 </script>
-
-<style scoped>
-  .selector {
-    width: 20%;
-  }
-</style>

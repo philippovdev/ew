@@ -1,6 +1,6 @@
 import Vuex from "vuex";
 import Vue from "vue";
-import images from "./modules/images";
+import images from "./modules/images/";
 
 Vue.use(Vuex);
 

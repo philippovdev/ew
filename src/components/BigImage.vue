@@ -6,7 +6,7 @@
   >
     <div
       v-if="propData.type === 'image'"
-      class="selected-pic__media"
+      class="big-image__media"
     >
       <img
         :src="propData.src"
@@ -15,7 +15,7 @@
     </div>
     <div
       v-if="propData.type === 'video'"
-      class="selected-pic__media"
+      class="big-image__media"
     >
       <video
         draggable="false"
@@ -30,7 +30,7 @@
         >
       </video>
     </div>
-    <div class="selected-pic__body">
+    <div class="big-image__content">
       <div class="heading">
         <div class="heading__title">
           Title
@@ -77,22 +77,22 @@
       data: {
         type: Object,
         required: true
-      },
+      }
     },
     data() {
       return {
         propData: this.data
-      }
+      };
     },
     methods: {
       unsetSelectedPic() {
         this.propData = {
           isVisible: false
         };
-        this.$emit('unsetSelectedPic', this.propData);
-      },
+        this.$emit("unsetSelectedPic", this.propData);
+      }
     }
-  }
+  };
 </script>
 
 <style scoped>
@@ -104,5 +104,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
     cursor: pointer;
+    z-index: 100;
   }
 </style>

@@ -8,13 +8,13 @@
       <div
         v-for="card in allCards"
         :key="card.id"
-        class="card"
+        class="card grid__item"
         :title="card.title"
-        @click="showFullPic(card, $event)"
       >
         <div
           v-if="!card.images && !card.mp4"
           class="card__media"
+          @click="showFullPic(card, $event)"
         >
           <img
             :src="card.link"
@@ -24,6 +24,7 @@
         <div
           v-else-if="!card.images && card.mp4"
           class="card__media"
+          @click="showFullPic(card, $event)"
         >
           <video
             draggable="false"
@@ -41,6 +42,7 @@
         <div
           v-else-if="!card.images[0].mp4"
           class="card__media"
+          @click="showFullPic(card, $event)"
         >
           <img
             :src="card.images[0].link"
@@ -50,6 +52,7 @@
         <div
           v-else
           class="card__media"
+          @click="showFullPic(card, $event)"
         >
           <video
             draggable="false"
@@ -65,7 +68,7 @@
           </video>
         </div>
         <div class="card__description">
-          {{ card.description ? card.description : card.title }}
+          <h3 v-text="limitText((card.description ? card.description : card.title), 50)"></h3>
         </div>
       </div>
     </div>
@@ -73,7 +76,7 @@
 </template>
 
 <script>
-  import {mapActions, mapGetters} from 'vuex'
+  import {mapActions, mapGetters} from "vuex";
   import BigImage from "./BigImage";
 
   export default {
@@ -85,63 +88,58 @@
           isVisible: false,
           type: null
         }
-      }
+      };
     },
-    computed: mapGetters(['allCards']),
+    computed: mapGetters(["allCards"]),
+    mounted() {
+      console.log('scroll');
+      this.scroll();
+    },
     created() {
       this.fetchImages();
     },
     methods: {
-      ...mapActions(['fetchImages']),
+      ...mapActions(["fetchImages"]),
       showFullPic(data, $event) {
-        if ($event.target.tagName === 'VIDEO' || $event.target.tagName === 'IMG') {
-          this.selectedPic.isVisible = true;
-          if ($event.target.src) {
-            this.selectedPic.type = 'image';
-            this.selectedPic.src = $event.target.src;
-          } else {
-            this.selectedPic.type = 'video';
-            this.selectedPic.src = $event.target.querySelector('source').src;
-          }
+        this.selectedPic.isVisible = true;
+        if ($event.target.src) {
+          this.selectedPic.type = "image";
+          this.selectedPic.src = $event.target.src;
+        } else {
+          this.selectedPic.type = "video";
+          this.selectedPic.src = $event.target.querySelector("source").src;
         }
       },
       unsetSelectedPic() {
         this.selectedPic = {
           isVisible: false
+        };
+      },
+      limitText(text, limit = 20) {
+        const newText = [];
+        if (text.length > limit) {
+          text.split(' ').reduce((acc, cur) => {
+            if (acc + cur.length <= limit) {
+              newText.push(cur);
+            }
+            return acc += cur.length
+          }, 0);
+          return `${newText.join(' ')} ...`;
         }
+        return text;
+      },
+      scroll() {
+        window.onscroll = () => {
+          const rootElHeight = document.querySelector('.grid').offsetHeight + 60;
+          let bottomOfWindow = ((document.documentElement.scrollTop + window.innerHeight + 1) >= rootElHeight);
+          if (bottomOfWindow) {
+            this.loadNewPosts()
+          }
+        }
+      },
+      loadNewPosts() {
+        this.$store.dispatch('setNewPage', this.$store.getters.params.page);
       },
     }
   }
 </script>
-
-<style scoped lang="scss">
-
-  .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    flex-basis: 25%;
-    overflow: hidden;
-    padding: 15px;
-
-    &__media {
-      max-height: 240px;
-      overflow: hidden;
-    }
-
-    &__media img,
-    &__media video {
-      width: auto;
-      max-width: 100%;
-      cursor: pointer;
-    }
-
-    &__description {
-      background-color: white;
-      width: 100%;
-      flex-grow: 1;
-      padding: 15px;
-    }
-  }
-
-</style>

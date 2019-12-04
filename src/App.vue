@@ -1,16 +1,26 @@
 <template>
   <div>
-    <AppHeader />
-    <router-view />
+    <AppHeader @sidenavToggle="displaySidenav = !displaySidenav"/>
+    <SideNav
+      :show="displaySidenav"
+      @close="displaySidenav = false"/>
+    <router-view/>
   </div>
 </template>
 <script>
   import AppHeader from "@/components/AppHeader";
+  import SideNav from "@/components/nav/SideNav";
 
   export default {
     name: "App",
     components: {
-      AppHeader
+      AppHeader,
+      SideNav
+    },
+    data() {
+      return {
+        displaySidenav: false
+      }
     }
   };
 </script>

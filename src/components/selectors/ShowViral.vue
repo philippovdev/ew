@@ -1,6 +1,7 @@
 <template>
   <div>
-    <label for="is-viral">Show Viral
+    <p class="helper helper--small">Show Viral</p>
+    <div class="selector selector--checkbox">
       <input
         id="is-viral"
         type="checkbox"
@@ -8,28 +9,23 @@
         :checked="isViral"
         @change="setViral"
       >
-    </label>
+      <label for="is-viral"></label>
+    </div>
   </div>
 </template>
 
 <script>
-  export default {
-    name: "Window",
-    computed: {
-      isViral() {
-        return this.$store.getters.showViral
-      }
-    },
-    methods: {
-      setViral() {
-        this.$store.dispatch('setViral')
-      }
+export default {
+  name: "Window",
+  computed: {
+    isViral() {
+      return this.$store.getters.params.showViral;
+    }
+  },
+  methods: {
+    setViral() {
+      this.$store.dispatch("setViral");
     }
   }
+};
 </script>
-
-<style scoped>
-  .selector {
-    width: 20%;
-  }
-</style>

@@ -1,4 +1,49 @@
 .card {
-  background-color: green;
-  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-basis: 20%;
+  overflow: hidden;
+  margin: 10px;
+  background-color: rgba($color-primary, .2);
+  box-shadow: $shadow-regular;
+  transition: all .2s ease-in-out;
+  border-radius: $border-radius;
+  &:hover {
+    transform: scale(1.01) translateY(-5px);
+    box-shadow: $shadow-spreaded;
+  }
+
+  @include respond(desktop) {
+    flex-basis: 30%;
+  }
+
+  @include respond(tab-land) {
+    flex-basis: 45%;
+  }
+
+  @include respond(phone) {
+    flex-basis: 100%;
+  }
+
+
+  &__media {
+    max-height: 240px;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  &__media img,
+  &__media video {
+    width: auto;
+    max-width: 100%;
+    cursor: pointer;
+  }
+
+  &__description {
+    background-color: white;
+    width: 100%;
+    flex-grow: 1;
+    padding: 15px;
+  }
 }

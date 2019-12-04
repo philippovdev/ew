@@ -1,0 +1,25 @@
+.text {
+  stroke-width: 1;
+  stroke-linejoin: round;
+  stroke-dasharray: 50;
+  stroke-dashoffset: 0;
+  -webkit-animation: stroke 20s infinite linear;
+  animation: stroke 30s infinite linear;
+  fill: $color-accent;
+}
+
+.text {
+  stroke: #fff;
+}
+
+@-webkit-keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: -550;
+  }
+}

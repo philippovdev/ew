@@ -1,0 +1,15 @@
+.burger {
+  @include respond(phone) {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__bar {
+    height: 2px;
+    width: 100%;
+    background-color: $color-accent;
+  }
+}

@@ -11,23 +11,17 @@
 </template>
 
 <script>
-  export default {
-    name: "Sort",
-    computed: {
-      store() {
-        return this.$store.state
-      }
-    },
-    methods: {
-      setActiveSort(val) {
-        this.$store.dispatch('setActiveSort', val)
-      }
+export default {
+  name: "Sort",
+  computed: {
+    store() {
+      return this.$store.state;
+    }
+  },
+  methods: {
+    setActiveSort(val) {
+      this.$store.dispatch("setActiveSort", val);
     }
   }
+};
 </script>
-
-<style scoped>
-  .selector {
-    width: 20%;
-  }
-</style>

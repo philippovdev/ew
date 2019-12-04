@@ -11,23 +11,17 @@
 </template>
 
 <script>
-  export default {
-    name: "Section",
-    computed: {
-      store() {
-        return this.$store.state
-      }
-    },
-    methods: {
-      setActiveSection(val) {
-        this.$store.dispatch('setActiveSection', val)
-      }
+export default {
+  name: "Section",
+  computed: {
+    store() {
+      return this.$store.state;
+    }
+  },
+  methods: {
+    setActiveSection(val) {
+      this.$store.dispatch("setActiveSection", val);
     }
   }
+};
 </script>
-
-<style scoped>
-  .selector {
-    width: 20%;
-  }
-</style>

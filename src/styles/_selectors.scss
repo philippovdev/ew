@@ -1,0 +1,7 @@
+.selector {
+  cursor: pointer;
+  &--checkbox {
+    display: flex;
+    align-items: center;
+  }
+}
