@@ -92,7 +92,6 @@
     },
     computed: mapGetters(["allCards"]),
     mounted() {
-      console.log('scroll');
       this.scroll();
     },
     created() {
@@ -109,6 +108,11 @@
           this.selectedPic.type = "video";
           this.selectedPic.src = $event.target.querySelector("source").src;
         }
+        this.selectedPic.title = data.title;
+        this.selectedPic.description = data.description;
+        this.selectedPic.downs = data.downs;
+        this.selectedPic.ups = data.ups;
+        this.selectedPic.score = data.score;
       },
       unsetSelectedPic() {
         this.selectedPic = {

@@ -22,6 +22,7 @@
   }
   &__selectors {
     display: flex;
+    margin-left: auto;
     @include respond(phone) {
       display: none;
     }
@@ -30,11 +31,14 @@
       display: flex;
       align-items: center;
       min-width: 120px;
+      @include respond(phone) {
+        margin-bottom: 20px;
+      }
     }
     & > div:not(:last-of-type) {
       margin-right: 20px;
       @include respond(phone) {
-        margin-right: 10px;
+        margin-right: 0;
       }
     }
     & .v-select.selector {

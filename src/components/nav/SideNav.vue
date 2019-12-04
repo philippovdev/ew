@@ -48,7 +48,7 @@
   }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
   .close {
     position: absolute;
     top: 15px;
@@ -78,7 +78,11 @@
     top: 0;
     right: 0;
     box-sizing: border-box;
-    padding: 30px;
+    padding: 50px 30px 30px 30px;
+
+    & > div {
+      margin-bottom: 15px;
+    }
   }
 
   .nav-item a {
