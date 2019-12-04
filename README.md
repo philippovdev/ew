@@ -7,7 +7,7 @@ This project Will generate list of images from Imgur Gallery api.
 Implemented: 
 1. Sorting
 2. Mobile Version
-3. IE11 competible
+3. IE11 compatible
 4. Infinite scrolling
 ```
 ## Project setup
