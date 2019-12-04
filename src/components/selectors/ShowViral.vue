@@ -1,6 +1,8 @@
 <template>
   <div>
-    <p class="helper helper--small">Show Viral</p>
+    <p class="helper helper--small">
+      Show Viral
+    </p>
     <div class="selector selector--checkbox">
       <input
         id="is-viral"
@@ -9,7 +11,7 @@
         :checked="isViral"
         @change="setViral"
       >
-      <label for="is-viral"></label>
+      <label for="is-viral" />
     </div>
   </div>
 </template>

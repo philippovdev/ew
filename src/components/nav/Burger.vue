@@ -4,9 +4,9 @@
     class="burger"
     @click="$emit('toggle')"
   >
-    <div class="burger__bar"></div>
-    <div class="burger__bar"></div>
-    <div class="burger__bar"></div>
+    <div class="burger__bar" />
+    <div class="burger__bar" />
+    <div class="burger__bar" />
   </div>
 </template>
 

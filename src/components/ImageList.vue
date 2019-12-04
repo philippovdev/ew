@@ -68,7 +68,7 @@
           </video>
         </div>
         <div class="card__description">
-          <h3 v-text="limitText((card.description ? card.description : card.title), 50)"></h3>
+          <h3 v-text="limitText((card.description ? card.description : card.title), 50)" />
         </div>
       </div>
     </div>

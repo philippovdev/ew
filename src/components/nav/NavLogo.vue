@@ -1,22 +1,54 @@
 <template>
   <div>
-    <svg v-if="isDesktop" class="svg__logo" viewBox="0 0 100 20">
+    <svg
+      v-if="isDesktop"
+      class="svg__logo"
+      viewBox="0 0 100 20"
+    >
       <!-- Symbol-->
       <symbol id="s-text">
-        <text text-anchor="" x="0" y="50%" dy=".35em" class="text">EuroWings App</text>
+        <text
+          text-anchor=""
+          x="0"
+          y="50%"
+          dy=".35em"
+          class="text"
+        >EuroWings App</text>
       </symbol>
       <!-- Duplicate symbols-->
-      <use xlink:href="#s-text" class="text"></use>
-      <use xlink:href="#s-text" class="text"></use>
+      <use
+        xlink:href="#s-text"
+        class="text"
+      />
+      <use
+        xlink:href="#s-text"
+        class="text"
+      />
     </svg>
-    <svg v-else class="svg__logo" viewBox="0 0 100 20">
+    <svg
+      v-else
+      class="svg__logo"
+      viewBox="0 0 100 20"
+    >
       <!-- Symbol-->
       <symbol id="s-text">
-        <text text-anchor="" x="0" y="50%" dy=".35em" class="text">EW</text>
+        <text
+          text-anchor=""
+          x="0"
+          y="50%"
+          dy=".35em"
+          class="text"
+        >EW</text>
       </symbol>
       <!-- Duplicate symbols-->
-      <use xlink:href="#s-text" class="text"></use>
-      <use xlink:href="#s-text" class="text"></use>
+      <use
+        xlink:href="#s-text"
+        class="text"
+      />
+      <use
+        xlink:href="#s-text"
+        class="text"
+      />
     </svg>
   </div>
 </template>

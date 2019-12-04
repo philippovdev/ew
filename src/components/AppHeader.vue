@@ -2,15 +2,15 @@
   <div class="header">
     <div class="header__container">
       <div class="header__logo">
-        <NavLogo/>
+        <NavLogo />
       </div>
       <div class="header__selectors">
-        <Section/>
-        <Sort/>
-        <Window v-if="isSectionTop"/>
-        <ShowViral v-if="isSectionUser"/>
+        <Section />
+        <Sort />
+        <Window v-if="isSectionTop" />
+        <ShowViral v-if="isSectionUser" />
       </div>
-      <Burger @toggle="$emit('sidenavToggle')"/>
+      <Burger @toggle="$emit('sidenavToggle')" />
     </div>
   </div>
 </template>

@@ -1,5 +1,13 @@
 # euro-wings-app
 
+```
+This project Will generate list of images from Imgur Gallery api.
+Implemented: 
+1. Sorting
+2. Mobile Version
+3. IE11 competible
+4. Infinite scrolling
+```
 ## Project setup
 ```
 npm install
@@ -15,15 +23,7 @@ npm run serve
 npm run build
 ```
 
-### Run your tests
-```
-npm run test
-```
-
 ### Lints and fixes files
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

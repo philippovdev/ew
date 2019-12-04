@@ -18,10 +18,6 @@ export const mutations = {
     state.params.page = page;
   },
   loadNewPosts(state, images) {
-    for (let image in images) {
-      if (state.images.indexOf(images[image]) < 0) {
-        state.images.push(images[image]);
-      }
-    }
+    state.images = [...state.images, ...images];
   }
 };

@@ -1,10 +1,11 @@
 <template>
   <div>
-    <AppHeader @sidenavToggle="displaySidenav = !displaySidenav"/>
+    <AppHeader @sidenavToggle="displaySidenav = !displaySidenav" />
     <SideNav
       :show="displaySidenav"
-      @close="displaySidenav = false"/>
-    <router-view/>
+      @close="displaySidenav = false"
+    />
+    <router-view />
   </div>
 </template>
 <script>

@@ -1,8 +1,8 @@
 <template>
   <div
     v-if="propData.isVisible"
-    class="big-image__background">
-
+    class="big-image__background"
+  >
     <fa
       class="close"
       :icon="['fas', 'times']"
@@ -42,10 +42,18 @@
       </div>
       <div class="big-image__data">
         <div class="big-image__data-part data__heading">
-          <h2 class="data__heading-title" v-text="propData.title"></h2>
-          <p class="data__heading-description" v-text="propData.description"></p>
+          <h2
+            class="data__heading-title"
+            v-text="propData.title"
+          />
+          <p
+            class="data__heading-description"
+            v-text="propData.description"
+          />
         </div>
-        <div class="big-image__data-part data__score">Score: {{ propData.score }}</div>
+        <div class="big-image__data-part data__score">
+          Score: {{ propData.score }}
+        </div>
         <div class="big-image__data-part data__votes">
           <div class="data__votes--with-icon-left data__votes-up">
             <fa

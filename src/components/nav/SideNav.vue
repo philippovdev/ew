@@ -3,20 +3,22 @@
     <div
       v-if="show"
       class="sidenav-backdrop"
-      @click="$emit('close')"></div>
+      @click="$emit('close')"
+    />
     <transition name="slide-side">
       <div
         v-if="show"
-        class="sidenav">
-        <Section/>
-        <Sort/>
-        <Window v-if="isSectionTop"/>
-        <ShowViral v-if="isSectionUser"/>
+        class="sidenav"
+      >
+        <Section />
+        <Sort />
+        <Window v-if="isSectionTop" />
+        <ShowViral v-if="isSectionUser" />
         <fa
           :icon="['fas', 'times']"
-          @click="$emit('close')"
           class="close"
-        ></fa>
+          @click="$emit('close')"
+        />
       </div>
     </transition>
   </div>
